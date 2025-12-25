@@ -1,0 +1,101 @@
+/* ======= Cấu hình chung ======= */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* ======= Container trung tâm ======= */
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ======= Form upload ảnh & video ======= */
+form {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background: #ff8c00;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #e07b00;
+    transform: scale(1.05);
+}
+
+/* ======= Kết quả nhận diện ======= */
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.result img,
+.result video {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/* ======= Liên kết mở webcam ======= */
+a {
+    display: inline-block;
+    background: #00c853;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+a:hover {
+    background: #009624;
+    transform: scale(1.05);
+}
+
+/* ======= Dòng phân cách đẹp hơn ======= */
+hr {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 30px 0;
+}

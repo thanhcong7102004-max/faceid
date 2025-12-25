@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhận diện khuôn mặt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>📸 Upload ảnh để nhận diện</h2>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Nhận diện</button>
+        </form>
+
+        {% if image_path %}
+        <div class="result">
+            <h3>Kết quả:</h3>
+            <img src="{{ image_path }}" alt="Uploaded Image">
+            <p><strong>Tên:</strong> {{ name }}</p>
+            <p><strong>Độ chính xác:</strong> {{ confidence }}</p>
+            <p><strong>Cảm xúc:</strong> {{ emotion }}</p>
+            <p><strong>Giới tính:</strong> {{ gender }}</p>
+            <p><strong>Tuổi:</strong> {{ age }}</p>
+            <p><strong>Hướng Khuôn Mặt:</strong> {{ head_pose }}</p>
+        </div>
+        {% endif %}
+
+        <hr>
+
+        <h2>🎥 Nhận diện qua Webcam</h2>
+        <a href="{{ url_for('webcam') }}">Mở Webcam</a>
+
+        <hr>
+
+        <h2>📂 Upload Video để nhận diện</h2>
+        <form action="/video" method="post" enctype="multipart/form-data">
+            <input type="file" name="video" accept="video/*" required>
+            <button type="submit">Tải lên & Nhận diện</button>
+        </form>
+
+        {% if video_result %}
+        <div class="result">
+            <h3>Video đã xử lý</h3>
+            <button onclick="document.getElementById('resultVideo').style.display='block'">Xem kết quả</button>
+            <video id="resultVideo" style="display:none; max-width:100%; border-radius:10px;" controls>
+                <source src="{{ video_result }}" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
